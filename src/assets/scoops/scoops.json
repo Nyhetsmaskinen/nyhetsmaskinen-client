@@ -1,0 +1,49 @@
+{
+  "scoops": [
+    {
+      "name": "Äta människokött?",
+      "description": "Det här kan bli stort! En svensk forskare har pratat om kannibalism i direktsändning och det trendar i USA. Vi måste vara kvicka på att få ut den här nyheten! Gör research på nyheten så snabbt som möjligt.",
+      "social": {
+        "twitter": "https://twitter.com/BreitbartNews/status/1170360020195774465?ref_src=twsrc%5Etfw"
+      },
+      "time": 360,
+      "questions": [
+        {
+          "text": "Breitbart är en Amerikansk nyhetssajt. Hur beskriver de sig själva?",
+          "answers": ["Our mission is to enrich your life and to inform, educate and entertain you, wherever you are.","News, commentary, and destruction of the political/media establishment.","We believe that real life is news, and news is personal."],
+          "answerCorrect": 1
+        },
+        {
+          "text": "USAs president Donald Trump spred nyheten vidare genom sitt konto på Twitter.",
+          "answers": ["Sant", "Falskt"],
+          "answerCorrect": 1
+        },
+        {
+          "text": "Det här är en skärmdump från ett svenskt TV-program. Var kommer bilden från?",
+          "answers": ["SVT1", "TV4", "Kanal 5"],
+          "answerCorrect": 1
+        },
+        {
+          "text": "Magnus Söderlund är professor på Handelshögskolan i Stockholm. I september 2019 höll han ett uppmärksammat föredrag om mat - vad var rubriken?",
+          "answers": ["Så påverkas vi av ekologisk märkning", "Kan du tänka dig att äta människokött?", "Människokött - ett alternativ för att rädda klimatet?"],
+          "answerCorrect": 1
+        }
+      ]
+    },
+    {
+      "name": "Tvångsstrejk på svensk skola?",
+      "description": "I Umeå...",
+      "social": {
+        "instagram": "https://www.instagram.com/p/B7IWs2BJoO5"
+      },
+      "time": 120,
+      "questions": [
+        {
+          "text": "Tvång?",
+          "answers": ["Ja","Nej"],
+          "answerCorrect": 1
+        }
+      ]
+    }
+  ]
+}

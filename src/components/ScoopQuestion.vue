@@ -1,0 +1,69 @@
+<template>
+  <div class="ScoopQuestion">
+
+    <Interactable :correct="reveal ? correct : -1">
+
+      <p>
+        <strong>{{question.text}}</strong>
+      </p>
+
+      <div v-for="(answer,id) in question.answers" :key="id">
+        <ScoopQuestionAnswer :text="answer" :questionName="'q'+question.__ob__.dep.id" :val="id" v-model="question.answerUser" :lock="reveal"></ScoopQuestionAnswer>
+      </div>
+
+    </Interactable>
+
+  </div>
+</template>
+
+<script>
+
+import Interactable from '@/components/Interactable.vue'
+import ScoopQuestionAnswer from '@/components/ScoopQuestionAnswer.vue'
+
+//import { createNamespacedHelpers } from 'vuex'
+//const { mapState } = createNamespacedHelpers('namespace1/namespace2')
+
+export default {
+  name: 'ScoopQuestion',
+  components: {
+    Interactable,
+    ScoopQuestionAnswer
+  },
+  data: function () {
+    return {
+      answered: -1
+    }
+  },
+  props: {
+    question: Object,
+    reveal: Boolean
+  },
+  computed: {
+    /*...mapState([
+      'stateField',
+    ]),*/
+    /*...mapGetters([
+      'nImmune'
+    ])*/
+    correct: function () {
+      return this.question.answerCorrect == this.question.answerUser;
+    }
+  },
+  methods: {
+  },
+  mounted: function () {
+    console.log()
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+
+.ScoopQuestion{
+  display: flex;
+  flex: 1;
+}
+
+</style>

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:100,300,400,500,600,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,500,600,800,900');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+body, button, table{
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 1.1em;
+  color: rgb(50,50,50);
+}
+
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: darkred;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+h1, .h1{
+  font-family: "Roboto Condensed";
+  font-weight: bold;
+  font-size: 6em;
+  color: rgb(60,60,60);
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  hyphens: auto;
+}
+
+h2, .h2{
+  font-family: "Roboto Condensed";
+  font-weight: 500;
+  color: gray;
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+
+}
+
+h3, .h3{
+  font-family: "Roboto Condensed";
+  font-weight: 400;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  color: rgb(160,160,160);
+  text-decoration: underline;
+}
+
+h4 {
+  margin: 0.5em 0 0.5em 0;
+}
+
+.nomargin{
+  margin: 0;
+}

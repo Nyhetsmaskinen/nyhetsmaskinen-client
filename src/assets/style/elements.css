@@ -1,0 +1,14 @@
+.bluebox{
+  display: inline-block;
+  background: DodgerBlue;
+  border-radius: 5px 3px 5px 3px;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  transform: rotateZ(-15deg) translateY(-0.25em);
+}
+
+.bluetext{
+  color: DodgerBlue;
+  font-weight: bold;
+}

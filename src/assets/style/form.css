@@ -1,0 +1,18 @@
+input[type=text]{
+  width: 100%;
+  font-size: larger;
+  border: 0;
+}
+
+button{
+  background: Turquoise;
+  border: 0;
+  padding: 15px;
+  font-size: larger;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled{
+  cursor: default;
+}
