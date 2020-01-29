@@ -13,14 +13,14 @@
         </div>
       </div>
 
-      <h2>
-        <AnimatedNumber :end="user.score.correct" v-model="nCorrect">
-          <!--Clap v-for="i in nCorrect" :key="i" emoji="🧐"></Clap-->
-          <Clap emoji="🧐" :small="true"></Clap>
-        </AnimatedNumber>
-      </h2>
-
-
+      <div>
+        <h2>
+          <AnimatedNumber :end="user.score.correct" v-model="nCorrect">
+            <!--Clap v-for="i in nCorrect" :key="i" emoji="🧐"></Clap-->
+            <Clap emoji="🧐" :small="true"></Clap>
+          </AnimatedNumber>
+        </h2>
+      </div>
 
     </div>
 
@@ -32,12 +32,14 @@
         </AnimatedNumber>
       </div>
 
-      <h2>
-        <AnimatedNumber :end="user.score.rating" v-model="nRating">
-          <!--Clap v-for="i in nRating" :key="i" emoji="🤔"></Clap-->
-          <Clap emoji="🤔" :small="true"></Clap>
-        </AnimatedNumber>
-      </h2>
+      <div>
+        <h2>
+          <AnimatedNumber :end="user.score.rating" v-model="nRating">
+            <!--Clap v-for="i in nRating" :key="i" emoji="🤔"></Clap-->
+            <Clap emoji="🤔" :small="true"></Clap>
+          </AnimatedNumber>
+        </h2>
+      </div>
 
     </div>
 
@@ -100,12 +102,14 @@ export default {
 }
 
 .sidebyside{
-  width: 80%;
-  justify-content: flex-start;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .sidebyside > div {
   flex: 1;
+  margin-right: 10px;
+  text-align: center;
 }
 
 h2{
