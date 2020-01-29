@@ -14,7 +14,7 @@
       </div>
 
       <h2>
-        <AnimatedNumber :end="user.score.correct" v-model="nCorrect" :delay="2000">
+        <AnimatedNumber :end="user.score.correct" v-model="nCorrect">
           <!--Clap v-for="i in nCorrect" :key="i" emoji="🧐"></Clap-->
           <Clap emoji="🧐" :small="true"></Clap>
         </AnimatedNumber>
@@ -27,13 +27,13 @@
     <div class="sidebyside">
 
       <div class="margin">
-        <AnimatedNumber :end="user.score.time" v-model="time" :delay="1000" :show="false">
+        <AnimatedNumber :end="user.score.time" v-model="time" :show="false">
           <Timer :time="time" :small="true"></Timer>
         </AnimatedNumber>
       </div>
 
       <h2>
-        <AnimatedNumber :end="user.score.rating" v-model="nRating" :delay="3000">
+        <AnimatedNumber :end="user.score.rating" v-model="nRating">
           <!--Clap v-for="i in nRating" :key="i" emoji="🤔"></Clap-->
           <Clap emoji="🤔" :small="true"></Clap>
         </AnimatedNumber>
