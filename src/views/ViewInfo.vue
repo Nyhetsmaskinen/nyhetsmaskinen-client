@@ -22,7 +22,7 @@
         För frågor om innehållet, vänligen kontakta oss på <a href="mailto:info@fabel.se">info@fabel.se</a>.
       </p>
 
-      <ContinueButton @click.native="home()">Tillbaka till startsidan</ContinueButton>
+      <ContinueButton @click="home()">Tillbaka till startsidan</ContinueButton>
 
     </CenterColumn>
 
