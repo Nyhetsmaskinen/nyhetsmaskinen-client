@@ -15,7 +15,7 @@
       </p>
 
       <p>
-        Allt innehåll är licensierat enligt Creative Commons (CC-BY-4.0) och kan användas fritt, även i kommersiellt syfte, under förutsättning att de ursprungliga skaparna av materialet namnges. Vi använder oss av öppen källkod som kan återfinnas på XXXX.
+        Allt innehåll är licensierat enligt Creative Commons (CC-BY-4.0) och kan användas fritt, även i kommersiellt syfte, under förutsättning att de ursprungliga skaparna av materialet namnges. Vi använder oss av öppen källkod som kan återfinnas på <a href="https://github.com/Dramafabriken" target="_blank">https://github.com/Dramafabriken</a>.
       </p>
 
       <p>
