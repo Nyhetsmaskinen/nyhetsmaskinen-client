@@ -1,6 +1,8 @@
 //console.log(window.location.hostname)
 
-const connection = new WebSocket('ws://'+window.location.hostname+':8081');
+//const connection = new WebSocket('ws://'+window.location.hostname+':8081');
+const connection = new WebSocket('https://dramafabriken.herokuapp.com/:8081');
+
 
 connection.onopen = () => {
   console.log('connected');

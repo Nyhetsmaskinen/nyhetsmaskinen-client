@@ -5,31 +5,24 @@
       Totalpoäng:
     </h2>
 
-    <h1>
-      <span class="bluetext">
-        <AnimatedNumber :end="pTotal"></AnimatedNumber>
-        ❤️
-      </span>
-    </h1>
+    <UserScore :user="getPlayer" v-if="getPlayer"></UserScore>
 
-    <ContinueButton @click.native.once="nextStep()">Fortsätt!</ContinueButton>
+    <br /><br />
 
   </div>
 </template>
 
 <script>
 
-import ContinueButton from '@/components/ContinueButton.vue'
-import AnimatedNumber from '@/components/AnimatedNumber.vue'
+import UserScore from '@/components/UserScore.vue'
 
-import { createNamespacedHelpers } from 'vuex'
-const { mapState, mapGetters } = createNamespacedHelpers('newsroom')
+import { mapState, mapGetters } from 'vuex'
+//const { mapState, mapGetters } = createNamespacedHelpers('newsroom')
 
 export default {
   name: 'GameResult',
   components: {
-    ContinueButton,
-    AnimatedNumber
+    UserScore
   },
   data: function () {
     return {
@@ -39,10 +32,13 @@ export default {
   props: {
   },
   computed: {
-    ...mapState([
+    ...mapState('newsroom',[
       'finished',
     ]),
     ...mapGetters([
+      'getPlayer'
+    ]),
+    ...mapGetters('newsroom',[
       'calcPoints'
     ]),
   },
@@ -67,7 +63,9 @@ export default {
 <style scoped lang="scss">
 
 .GameResult{
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 </style>

@@ -66,7 +66,8 @@ export default {
       sNew.name = s.name;
       sNew.description = s.description;
       sNew.social = s.social;
-      sNew.time = s.time;
+      sNew.rating = s.rating;
+      sNew.timeLimit = s.timeLimit;
 
       let questions = []
       s.questions.forEach((q) => {
@@ -77,6 +78,8 @@ export default {
         questions.push(qNew);
       })
       sNew.questions = questions;
+
+      sNew.info = s.info;
 
       commit('addScoop',{scoop: sNew});
     },
@@ -95,6 +98,34 @@ export default {
         points += getters["scoop/calcPoints"](s);
       })
       return points
+    },
+    getNCorrect: (state, getters) => {
+      let nCorrect = 0;
+      state.scoops.forEach((s) => {
+        nCorrect += getters["scoop/getNCorrect"](s);
+      })
+      return nCorrect
+    },
+    getNCorrectRating: (state, getters) => {
+      let n = 0;
+      state.scoops.forEach((s) => {
+        n += getters["scoop/getCorrectRating"](s) ? 1 : 0;
+      })
+      return n
+    },
+    getTimeTotal: (state) => {
+      let time = 0;
+      state.scoops.forEach((s) => {
+        time += s.time;
+      })
+      return time
+    },
+    getHeadersUser: (state) => {
+      let headers = []
+      state.scoops.forEach((s) => {
+        headers.push(s.headerUser)
+      })
+      return headers
     },
   },
   modules: {

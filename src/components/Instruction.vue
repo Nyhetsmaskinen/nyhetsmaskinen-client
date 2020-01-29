@@ -7,13 +7,12 @@
         </slot>
       </div>
     </div>
-    <div class="speech">
+    <div class="speech" v-if="speech">
       <div class="triangles">
         <div class="triangle1">
         </div>
         <div class="triangle2">
         </div>
-        <br />
       </div>
       <span class="boss">
         {{emojiRender}}
@@ -30,14 +29,15 @@ const { mapState } = createNamespacedHelpers('newsroom')
 export default {
   name: 'Instruction',
   props:{
-    emoji: String
+    emoji: {type: String, default: ""},
+    speech: {type: Boolean, default: true}
   },
   computed: {
     ...mapState([
       'boss',
     ]),
     emojiRender: function () {
-      if(this.emoji){
+      if(this.emoji.length > 0){
         return this.emoji
       }
       else{
@@ -52,13 +52,16 @@ export default {
 <style scoped lang="scss">
 
   .Instruction{
+    display: flex;
+    flex-direction: column;
+    color: rgb(100,100,100);
   }
 
   .content{
     background: DodgerBlue;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 5px 5px 0px LightBlue;
+    box-shadow: 5px 5px 0px LightSkyBlue;
     margin: 0 5px 5px 0;
   }
 
@@ -72,15 +75,17 @@ export default {
     position: relative;
     top: -5px;
     left: 20px;
+    width: 100px;
   }
 
   .triangles{
-    width: 60px;
+    max-width: 60px;
     height: 30px;
+    flex: 1;
     display: flex;
-    align-items: stretch;
-    position: relative;
     left: 5px;
+    margin: 0;
+    padding: 0;
   }
 
   .triangle1{

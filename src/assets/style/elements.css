@@ -5,10 +5,26 @@
   color: white;
   padding: 10px;
   font-weight: bold;
-  transform: rotateZ(-15deg) translateY(-0.25em);
+  transform: rotateZ(-5deg) translateY(-0.25em);
+}
+
+.bluebox.small{
+  font-size: 1.5em;
+  transform: translate(0);
+  padding: 5px;
 }
 
 .bluetext{
   color: DodgerBlue;
   font-weight: bold;
+}
+
+.margin{
+  margin: 2px;
+}
+
+.sidebyside{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

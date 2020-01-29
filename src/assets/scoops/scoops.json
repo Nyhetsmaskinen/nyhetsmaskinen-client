@@ -2,11 +2,12 @@
   "scoops": [
     {
       "name": "Äta människokött?",
-      "description": "Det här kan bli stort! En svensk forskare har pratat om kannibalism i direktsändning och det trendar i USA. Vi måste vara kvicka på att få ut den här nyheten! Gör research på nyheten så snabbt som möjligt.",
+      "description": "Det här kan bli stort! En svensk forskare har pratat om kannibalism i direktsändning och det trendar i USA.",
       "social": {
         "twitter": "https://twitter.com/BreitbartNews/status/1170360020195774465?ref_src=twsrc%5Etfw"
       },
-      "time": 360,
+      "rating": 2,
+      "timeLimit": 300,
       "questions": [
         {
           "text": "Breitbart är en Amerikansk nyhetssajt. Hur beskriver de sig själva?",
@@ -16,7 +17,7 @@
         {
           "text": "USAs president Donald Trump spred nyheten vidare genom sitt konto på Twitter.",
           "answers": ["Sant", "Falskt"],
-          "answerCorrect": 1
+          "answerCorrect": 0
         },
         {
           "text": "Det här är en skärmdump från ett svenskt TV-program. Var kommer bilden från?",
@@ -28,22 +29,95 @@
           "answers": ["Så påverkas vi av ekologisk märkning", "Kan du tänka dig att äta människokött?", "Människokött - ett alternativ för att rädda klimatet?"],
           "answerCorrect": 1
         }
-      ]
+      ],
+      "info": {
+        "text": "Inlägget får uppmärksamhet i flera medier [1,2]",
+        "references": [
+          "https://www.svt.se",
+          "https://www.dn.se"
+        ]
+      }
     },
     {
-      "name": "Tvångsstrejk på svensk skola?",
-      "description": "I Umeå...",
+      "name": "Bråk kring Muminparken!",
+      "description": "En storm håller på att blåsa upp i Karlstad. Det här kan bli nationella nyheter som engagerar! Två politiska läger är i luven på varandra. De bråkar om de välkända och populära Mumintrollen och det verkar vara många slag under bältet. Om vi är snabba på den här nyheten kan vi få många delningar. Kolla upp det här och publicera snabbt.",
       "social": {
-        "instagram": "https://www.instagram.com/p/B7IWs2BJoO5"
+        "url": "https://www.vf.se/2019/11/13/politiker-polisanmaler-dodshot-kopplat-till-muminparken/"
       },
-      "time": 120,
+      "rating": 0,
+      "timeLimit": 300,
       "questions": [
         {
-          "text": "Tvång?",
-          "answers": ["Ja","Nej"],
-          "answerCorrect": 1
+          "text": "Nyheten kommer via Värmlands folkblads hemsida Vad är det för en kanal?",
+          "answers": ["Alternativ 1"],
+          "answerCorrect": 0
+        },
+        {
+          "text": "Vad heter podden som som står i centrum för konflikten?",
+          "answers": ["Karlstadpartietpodden (nr 5 2019-11-13)"],
+          "answerCorrect": 0
+        },
+        {
+          "text": "Vad heter företaget som äger Muminland?",
+          "answers": ["Lataamo OY"],
+          "answerCorrect": 0
+        },
+        {
+          "text": "Vlka är de de viktigaste aktörerna i nyheten?",
+          "answers": ["Alternativ 1"],
+          "answerCorrect": 0
         }
-      ]
+      ],
+      "info": {
+        "text": "Inlägget får uppmärksamhet i flera medier [1,2]",
+        "references": [
+          "https://www.svt.se",
+          "https://www.dn.se"
+        ]
+      }
+    },
+    {
+      "name": "Elever tvingas klimatstrejka?",
+      "description": "Dagen börjar ta slut men jag fick syn på en sak till som ni borde hinna med innan ni går hem. En lokal nyhetssajt i Umeå har hittat en nyhet som snabbt spridit sig internationellt, om att barn på en förskola tvingas klimatstrejka.",
+      "social": {
+        "url": "https://www.rt.com/news/469919-children-forced-participate-climate-strike/"
+      },
+      "rating": 2,
+      "timeLimit": 300,
+      "questions": [
+        {
+          "text": "Nyheten här kommer från RT.com. Vad är det för typ av kanal?",
+          "answers": ["RealTime är tv-kanalen HBO:s ledande nyhetsprogram med inriktning på politik och medier.", "Ett internationellt nyhetsnätverk som finansieras av den ryska staten. Tidigare känt som Russia Today.",
+"Radio Television Luxemburg är ett digitalt medieföretag med 61 TV- och 30 radiostationer i 10 länder."],
+          "answerCorrect": 1
+        },
+        {
+          "text": "Vilken typ av skola är den som nyheten handlar om?",
+          "answers": ["Gymnasieskola","Låg- och mellanstadieskola F-6","Grundskola F-9 (R)"],
+          "answerCorrect": 2
+        },
+        {
+          "text": "Källan till nyheten är den svenska sajten 'Nyheter i Västerbotten'. Vem driver den?",
+          "answers": ["Sveriges Television","Moderaterna i Västerbotten","Stiftelsen VK-press"],
+          "answerCorrect": 1
+        },
+        {
+          "text": "Skolans rektor bekräftar till flera kanaler att det har varit en manifestation. Vad sägs vara syftet?",
+          "answers": ["Att redovisa skolarbeten om klimatet","Att lyfta klimatfrågan genom en frivillig klimatstrejk","Att protestera mot att politikerna inte gör tillräckligt för att stoppa klimatförändringar."],
+          "answerCorrect": 0
+        }
+      ],
+      "info": {
+        "text": "Den 27 september 2019 publicerade Moderaterna i Västerbotten ett inlägg på sin sida “Nyheter i Västerbotten” (1). Inlägget får uppmärksamhet i flera medier (2, 3) och publiceras tre dagar senare på ryska RT.com (4). Enligt skolans rektor och i den rapportering som sker efteråt framgår att manifestationen är en redovisning av skolarbete med utgångspunkt i elevernas ‘“klimatråd’”, inte någon obligatorisk “strejk” (5, 6). För att förstärka känslan av klimatstrejk bildsätts RT.coms artikel med protestbilder från andra länder. Det finns dock uppgifter om att en enskild lärare har kopplat samman manifestationen med Greta Thunbergs klimatstrejker och den kritik som lyfts i artikeln är relevant och korrekt citerad. Sammantaget bedöms nyheten vara mestadels falsk.",
+        "references": [
+          "https://nyheterivasterbotten.se/skolelever-tvingas-skolstrejka-mot-sin-vilja-i-umea/",
+          "https://www.svt.se/nyheter/lokalt/vasterbotten/vastangars-skola-tvingas-strejka-moderaterna",
+          "https://nyheteridag.se/elever-i-umea-tvingas-klimatstrejka-pa-skoltid-av-larare-greta-thunberg-uppmanat-oss/",
+          "https://www.rt.com/news/469919-children-forced-participate-climate-strike/",
+          "https://www.svt.se/nyheter/lokalt/vasterbotten/vastangardsskolan-i-manifestation-hor-barnens-klimatrad-till-de-vuxna",
+          "https://sverigesradio.se/sida/artikel.aspx?programid=109&artikel=7316099"
+        ]
+      }
     }
   ]
 }

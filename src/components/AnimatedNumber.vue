@@ -30,7 +30,7 @@ export default {
   props: {
     value: Number,
     start: Number,
-    end: {type: Number, default: 100},
+    end: {type: Number, default: 0},
     duration: {type: Number, default: 1000},
     steps: {type: Number, default: 100},
     delay: Number,

@@ -3,12 +3,12 @@
 
     <Interactable :correct="reveal ? correct : -1">
 
-      <p>
+      <h3>
         <strong>{{question.text}}</strong>
-      </p>
+      </h3>
 
       <div v-for="(answer,id) in question.answers" :key="id">
-        <ScoopQuestionAnswer :text="answer" :questionName="'q'+question.__ob__.dep.id" :val="id" v-model="question.answerUser" :lock="reveal"></ScoopQuestionAnswer>
+        <ScoopQuestionAnswer :text="answer" :questionName="'q'+question.__ob__.dep.id" :val="id" v-model="question.answerUser" :lock="reveal" :correct="reveal && isCorrectId(id)"></ScoopQuestionAnswer>
       </div>
 
     </Interactable>
@@ -47,13 +47,15 @@ export default {
       'nImmune'
     ])*/
     correct: function () {
-      return this.question.answerCorrect == this.question.answerUser;
+      return this.question.answerCorrect == this.question.answerUser ? 1 : 0;
     }
   },
   methods: {
+    isCorrectId: function (id) {
+      return id == this.question.answerCorrect;
+    }
   },
   mounted: function () {
-    console.log()
   }
 }
 </script>

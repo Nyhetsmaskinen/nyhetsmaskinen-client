@@ -20,17 +20,17 @@ export default {
 
   .CenterColumn{
     flex: 1;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
+    padding: 5px;
   }
 
   .col{
-    background: white;
     flex: 0 1 800px;
     max-width: 100%;
     text-align: left;
-    padding: 10px;
+    /*padding: 10px;*/
     border: 0px solid lightgray;
   }
 

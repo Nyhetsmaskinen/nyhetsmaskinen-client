@@ -1,39 +1,54 @@
 <template>
   <div class="ScoopResult">
 
-  <h3>Delpoäng: {{scoop.name}}</h3>
   <h2>
     Tidsbonus:
+    <br />
     <span class="bluetext">
       <AnimatedNumber :end="pTime" :delay="1000"></AnimatedNumber>
       ❤️
     </span>
   </h2>
   <h2>
-    Korrekta granskningar:
-    <div class="bluebox">
-      x<AnimatedNumber :end="pCorrect" :delay="2000"></AnimatedNumber>
-      ❤️
+    <Clap emoji="🧐" :small="true"></Clap>
+    <span v-if="nCorrect == 1">
+      1 korrekt granskning:
+    </span>
+    <span v-else>
+      {{nCorrect}} korrekta granskningar:
+    </span>
+    <br />
+    <div class="bluetext">
+      x<AnimatedNumber :end="pCorrect" :delay="2000" v-model="iCorrect"></AnimatedNumber>
+        <!--Clap v-for="i in iCorrect" :key="i" class="small"></Clap-->
     </div>
   </h2>
-  <h1>
+  <h2>
+    <Clap emoji="🤔" :small="true"></Clap>
+    Bedömning:
+    <br />
     <span class="bluetext">
-      <AnimatedNumber :end="pScoop" :delay="3000"></AnimatedNumber>
+      <AnimatedNumber :end="pRating" :delay="3000"></AnimatedNumber>
       ❤️
     </span>
-  </h1>
+  </h2>
 
   <hr />
 
-  <ContinueButton @click.native.once="nextStep()">Fortsätt!</ContinueButton>
+  <h1>
+    <span class="bluetext">
+      <AnimatedNumber :end="pScoop" :delay="4000"></AnimatedNumber>
+      ❤️
+    </span>
+  </h1>
 
   </div>
 </template>
 
 <script>
 
-import ContinueButton from '@/components/ContinueButton.vue'
 import AnimatedNumber from '@/components/AnimatedNumber.vue'
+import Clap from '@/components/Clap.vue'
 
 import { createNamespacedHelpers } from 'vuex'
 const { mapGetters } = createNamespacedHelpers('newsroom/scoop')
@@ -41,13 +56,16 @@ const { mapGetters } = createNamespacedHelpers('newsroom/scoop')
 export default {
   name: 'ScoopResult',
   components: {
-    ContinueButton,
     AnimatedNumber,
+    Clap
   },
   data: function () {
     return {
+      iCorrect: 0,
+      nCorrect: 0,
       pCorrect: 0,
       pTime: 0,
+      pRating: 0,
       pScoop: 0,
     }
   },
@@ -59,7 +77,10 @@ export default {
       'finished',
     ]),*/
     ...mapGetters([
+      'getPTime',
       'getNCorrect',
+      'getPCorrect',
+      'getPRating',
       'calcPoints'
     ]),
     finished: function () {
@@ -69,8 +90,10 @@ export default {
   watch: {
     finished: function (val){
       if(val){
-        this.pTime = this.scoop.time
-        this.pCorrect = this.getNCorrect(this.scoop)
+        this.pTime = this.getPTime(this.scoop)
+        this.nCorrect = this.getNCorrect(this.scoop)
+        this.pCorrect = this.getPCorrect(this.scoop)
+        this.pRating = this.getPRating(this.scoop)
         this.pScoop = this.calcPoints(this.scoop)
       }
     }
@@ -81,6 +104,7 @@ export default {
     },
   },
   mounted: function () {
+    //this.$store.commit('newsroom/scoop/setFinished', {scoop: this.scoop, finished: true})
   }
 }
 </script>
@@ -90,6 +114,12 @@ export default {
 
 .ScoopResult{
   text-align: center;
+}
+
+h2 {
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
 }
 
 </style>

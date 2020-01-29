@@ -9,13 +9,24 @@
 export default {
 
   methods: {
-    /*addScript: function (src,id){
-    }*/
+    socketEvents: function (){
+
+      let self = this;
+      this.$socket.on('players update', function(players){
+        self.$store.commit('playersUpdate', {players: players})
+      });
+
+      this.$socket.on('highscore update', function(highscore){
+        self.$store.commit('highscoreUpdate', {highscore: highscore})
+      });
+
+    }
   },
   mounted: function () {
     //this.addScript('https://platform.twitter.com/widgets.js');
     //this.addScript('//www.instagram.com/embed.js');
     this.$store.dispatch('newsroom/init')
+    this.socketEvents();
   }
 
 }

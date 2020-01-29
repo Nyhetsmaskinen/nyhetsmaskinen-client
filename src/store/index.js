@@ -8,8 +8,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     newsroom: newsroom,
+    players: [],
+    highscore: {}
   },
   mutations: {
+    playersUpdate (state,payload) {
+      state.players = payload.players
+    },
+    highscoreUpdate (state,payload) {
+      state.highscore = payload.highscore
+    },
   },
   actions: {
     addScript(undefined,payload) {
@@ -21,6 +29,22 @@ export default new Vuex.Store({
       script.setAttribute('src', payload.src)
       document.head.appendChild(script)
     }
+  },
+  getters: {
+    getPlayer: (state) => {
+      return state.players.filter(player => player.id == Vue.prototype.$socket.id)[0]
+    },
+    getCompetitors: (state) => {
+      return state.players.filter(player => player.id != Vue.prototype.$socket.id)
+    },
+    getPlayersFinished: (state) => {
+      return state.players.filter(player => player.score.score != undefined).sort(function(a, b) {
+        return b.score.score - a.score.score;
+      })
+    },
+    getPlayersNotFinished: (state) => {
+      return state.players.filter(player => player.score.score == undefined)
+    },
   },
   modules: {
     newsroom

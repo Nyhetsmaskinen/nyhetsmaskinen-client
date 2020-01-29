@@ -1,7 +1,7 @@
 <template>
-  <div class="ScoopQuestionAnswer">
+  <div class="ScoopQuestionAnswer" :class="{'showcorrect': correct}">
 
-    <label>
+    <label :class="{'lock': lock}">
       <input :name="questionName" type="radio" ref="radio" :value="val" @change="updateAnswer()" :disabled="lock"/>
       <span class="text">
         {{text}}
@@ -30,7 +30,8 @@ export default {
     text: String,
     questionName: String,
     val: Number,
-    lock: Boolean
+    lock: Boolean,
+    correct: Boolean
   },
   computed: {
     /*...mapState([
@@ -60,5 +61,12 @@ input[type="radio"]:checked+span{
   font-weight: bold;
 }
 
+.showcorrect{
+  text-decoration: underline;
+}
+
+label:not(.lock):hover{
+  text-decoration: underline;
+}
 
 </style>

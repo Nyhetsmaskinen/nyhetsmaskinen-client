@@ -14,7 +14,7 @@ body, button, table{
 a{
   text-decoration: none;
   font-weight: bold;
-  color: darkred;
+  color: HotPink;
 }
 
 a:hover{
@@ -24,10 +24,11 @@ a:hover{
 h1, .h1{
   font-family: "Roboto Condensed";
   font-weight: bold;
-  font-size: 6em;
+  font-size: 10vmin;
   color: rgb(60,60,60);
   margin-bottom: 0.2em;
   margin-top: 0.2em;
+
   hyphens: auto;
 }
 
@@ -44,11 +45,10 @@ h2, .h2{
 h3, .h3{
   font-family: "Roboto Condensed";
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.1em;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  color: rgb(160,160,160);
-  text-decoration: underline;
+  color: rgb(100,100,100);
 }
 
 h4 {

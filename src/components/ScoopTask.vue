@@ -1,53 +1,68 @@
 <template>
   <div class="ScoopTask">
 
-    <Interactable class="social">
-      <div v-if="scoop.social.twitter" class="post">
-        <blockquote class="twitter-tweet" width="100%">
-          <a :href="scoop.social.twitter">Inlägg på Twitter</a>
-        </blockquote>
-      </div>
-      <div v-if="scoop.social.instagram" class="post">
-        <blockquote class="instagram-media" :data-instgrm-permalink="scoop.social.instagram" data-instgrm-version="12"  width="100%" max-width="100%">
-          Inlägg på Instagram
-        </blockquote>
-      </div>
-    </Interactable>
-
-    <br />
-
-    <Instruction>
-      <strong>{{scoop.name}}</strong> {{scoop.description}}
-    </Instruction>
+    <CenterColumn>
+      <Instruction>
+        <strong>{{scoop.name}}</strong> {{scoop.description}}
+      </Instruction>
+    </CenterColumn>
 
     <ContinueButton @click.once="startTask()">Kör!</ContinueButton>
 
     <Step>
 
       <div class="timer">
-        <Timer :time="scoop.time"></Timer>
+        <Timer :time="scoop.timeLimit - scoop.time"></Timer>
       </div>
 
-      <div class="questions">
-        <div v-for="(question,key) in scoop.questions" :key="key">
-          <ScoopQuestion :question="question" class="question" :reveal="scoop.finished"></ScoopQuestion>
+      <div class="columns">
+        <div class="social">
+          <Instruction :speech="false">
+            <div v-if="scoop.social.url" class="post">
+              <OG :og="og" v-if="og"></OG>
+            </div>
+            <div v-if="scoop.social.twitter" class="post">
+              <blockquote class="twitter-tweet" width="100%">
+                <a :href="scoop.social.twitter">Inlägg på Twitter</a>
+              </blockquote>
+            </div>
+            <div v-if="scoop.social.instagram" class="post">
+              <blockquote class="instagram-media" :data-instgrm-permalink="scoop.social.instagram" data-instgrm-version="12"  width="100%" max-width="100%">
+                <a :href="scoop.social.instagram">Inlägg på Instagram</a>
+              </blockquote>
+            </div>
+          </Instruction>
         </div>
+
+        <div class="questions">
+          <div v-for="(question,key) in scoop.questions" :key="key">
+            <ScoopQuestion :question="question" class="question" :reveal="!intervalTimer"></ScoopQuestion>
+          </div>
+        </div>
+
       </div>
 
-      <ContinueButton @click.once="finish()">Klar!</ContinueButton>
+      <div class="sidebyside">
+        <ContinueButton @click.once="finishTime()">Klar!</ContinueButton>
+        <ContinueButton @click.once="finish()" :enabled="!intervalTimer">Gå vidare!</ContinueButton>
+      </div>
+
     </Step>
 
   </div>
 </template>
 
 <script>
-
+import CenterColumn from '@/components/CenterColumn.vue'
 import Instruction from '@/components/Instruction.vue'
-import Interactable from '@/components/Interactable.vue'
+//import Interactable from '@/components/Interactable.vue'
 import ContinueButton from '@/components/ContinueButton.vue'
 import Step from '@/components/Step.vue'
 import ScoopQuestion from '@/components/ScoopQuestion.vue'
 import Timer from '@/components/Timer.vue'
+import OG from '@/components/OG.vue'
+
+import ogs from 'open-graph-scraper'
 
 //import { createNamespacedHelpers } from 'vuex'
 //const { mapState } = createNamespacedHelpers('namespace1/namespace2')
@@ -55,16 +70,19 @@ import Timer from '@/components/Timer.vue'
 export default {
   name: 'ScoopTask',
   components: {
+    CenterColumn,
     Instruction,
-    Interactable,
+    //Interactable,
     ContinueButton,
     Step,
     ScoopQuestion,
-    Timer
+    Timer,
+    OG
   },
   data: function () {
     return {
       intervalTimer: null,
+      og: {}
     }
   },
   props: {
@@ -85,23 +103,48 @@ export default {
       this.nextStep();
     },
     timerCountdown: function () {
-      this.scoop.time--;
-      if(this.scoop.time <= 0){
+      this.scoop.time++;
+      if(this.scoop.time >= this.scoop.timeLimit){
         clearInterval(this.intervalTimer)
+        this.intervalTimer = null;
+        //this.$store.commit('newsroom/scoop/setFinished', {scoop: this.scoop, finished: true})
       }
     },
     nextStep: function () {
       this.$store.commit('newsroom/nextStep')
     },
-    finish: function () {
+    finishTime: function () {
       clearInterval(this.intervalTimer);
-      this.$store.commit('newsroom/scoop/setFinished', {scoop: this.scoop, finished: true})
+      this.intervalTimer = null;
+      //this.$store.commit('newsroom/scoop/setFinished', {scoop: this.scoop, finished: true})
+      //this.nextStep();
+    },
+    finish: function () {
+      //this.$store.commit('newsroom/scoop/setFinished', {scoop: this.scoop, finished: true})
       this.nextStep();
+    },
+    setOG: function () {
+      if(this.scoop.social.url){
+        let self = this;
+        let url = 'https://cors-anywhere.herokuapp.com/'+this.scoop.social.url
+        ogs({'url': url}, function (error, results) {
+          if(error){
+            console.log(error)
+          }
+          if(results){
+            self.og = results
+          }
+        });
+      }
+
     }
   },
   mounted: function () {
     this.$store.dispatch('addScript', {src: 'https://platform.twitter.com/widgets.js', id: "twitter-js"})
     this.$store.dispatch('addScript', {src: '//www.instagram.com/embed.js', id: "instagram-js"})
+
+    this.setOG();
+
   }
 }
 </script>
@@ -112,11 +155,23 @@ export default {
 .ScoopTask{
 }
 
+.columns{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 .social{
   display: flex;
-  justify-content: center;
   max-width: 100%;
-  overflow-x: hidden;
+  flex: 0 1 600px;
+  overflow-x: scroll;
+  margin-right: 10px;
+
+}
+
+.postContainer{
+
 }
 
 .post{
@@ -135,6 +190,7 @@ export default {
 }
 
 .questions{
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

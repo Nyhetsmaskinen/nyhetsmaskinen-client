@@ -16,3 +16,8 @@ button{
 button:disabled{
   cursor: default;
 }
+
+label{
+  display: block;
+  margin-bottom: 5px;
+}

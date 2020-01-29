@@ -40,6 +40,15 @@ export default {
     max-width: 100%;
   }
 
+  .Interactable.focuscolor > div:focus-within{
+    background: Pink;
+  }
+
+  input{
+    outline: none;
+    background-color: inherit;
+  }
+
   .correct{
     background: limegreen;
     box-shadow: 5px 5px 0px lightgreen;

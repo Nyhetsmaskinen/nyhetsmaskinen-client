@@ -4,8 +4,19 @@
 
       <h1>WebSockets test</h1>
 
-      <input @change="sendToWS()" ref="input"/>
-      Värde: {{val}}
+      <input @change="socketUpdateUserName()" type="text" ref="name"/>
+      <input @change="socketUpdateUserScore()" type="number" ref="score"/>
+
+      <br />
+      Highscore: {{highscore}}
+      <br />
+      Användare:
+      <pre>
+        {{users}}
+      </pre>
+
+      <br />
+
 
     </CenterColumn>
 
@@ -18,8 +29,15 @@
 //import Gun from 'gun/gun'
 //import { http } from 'http'
 //import '@/ws/wsserver'
+//import 'http://localhost:3000/socket.io/socket.io.js'
 
 // @ is an alias to /src
+//const io = require("socket.io");
+//import io from 'socket.io'
+//import io from 'socket.io-client'
+//const socket = io('ws://localhost:3000')
+//const socket = io('wss://dramafabriken.herokuapp.com')
+
 import CenterColumn from '@/components/CenterColumn.vue'
 //import WebSocket from 'ws';
 //const WebSocket = require('ws');
@@ -30,8 +48,11 @@ export default {
   data: function () {
     return {
       gun: null,
-      val: "",
-      connection: new WebSocket('wss://'+window.location.hostname+':8081')
+      users: {},
+      highscore: {},
+      //connection: new WebSocket('ws://localhost:8081')
+      //connection: new WebSocket('wss://dramafabriken.herokuapp.com'),
+      //socket: null
     }
   },
   components: {
@@ -40,25 +61,41 @@ export default {
   computed: {
   },
   methods: {
-    sendToWS: function (){
-      this.connection.send(this.$refs.input.value)
-      //this.gun.get('hello').put({ name: this.$refs.input.value });
-      //console.log("send: " + this.$refs.input.value)
-
+    socketUpdateUser: function (){
+      this.$socket.emit('user update', {name: this.$refs.name.value, score: parseInt(this.$refs.score.value)});
     },
-    onWsReceived: function () {
+    socketUpdateUserName: function (){
+      this.$socket.emit('user update name', this.$refs.name.value);
+    },
+    socketUpdateUserScore: function (){
+      this.$socket.emit('user update score', this.$refs.score.value)
+    },
+    /*onWsReceived: function () {
       let self = this;
       this.connection.onmessage = (event) => {
         self.val = event.data
-        //console.log('received', event.data);
+        console.log('received', event.data);
       };
+    },*/
+    socketEvents: function (){
+
+      let self = this;
+      this.$socket.on('users update', function(users){
+        self.users = users
+      });
+
+      this.$socket.on('highscore update', function(highscore){
+        self.highscore = highscore
+      });
+
     }
   },
   created: function () {
   },
   mounted: function () {
 
-    this.onWsReceived();
+    //this.onWsReceived();
+    this.socketEvents();
 
     //this.gun = Gun(['https://localhost:8080/gun'])
     //this.gun = Gun(['http://gunjs.herokuapp.com//gun'])

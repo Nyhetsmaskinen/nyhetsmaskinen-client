@@ -1,5 +1,5 @@
 <template>
-  <div class="Timer">
+  <div class="Timer" :class="{'small': small}">
     {{minutes}}:{{seconds}}
   </div>
 </template>
@@ -8,7 +8,8 @@
 export default {
   name: 'Timer',
   props: {
-    time: Number
+    time: Number,
+    small: {type: Boolean}
   },
   computed: {
     minutes: function () {
@@ -35,6 +36,11 @@ export default {
     font-size: 3em;
     color: red;
     border-radius: 5px;
+  }
+
+  .small{
+    font-size: 2em;
+    padding: 2px;
   }
 
 </style>
