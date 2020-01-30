@@ -1,32 +1,35 @@
 <template>
   <div class="ViewHome">
-    <CenterColumn>
 
-      <h1>Dramafabriken</h1>
+    <div class="main">
 
-      <p>
-        I det här spelet tar du eller ni rollen som medarbetare på en nyhetssajt. Ni får uppdrag av er chefredaktör ({{boss}}) att publicera nyheter som kan få stor spridning. Det är ert uppdrag att faktagranska nyheten för att sedan välja en vinkel om hur ni förmedlar nyheten.
-      </p>
+      <CenterColumn>
 
-      <p>
-        Använd din dator eller mobil att eftersöka fakta och andra källor. Räkna med att det tar 15-30 minuter att slutföra.
-      </p>
+        <h1>Dramafabriken</h1>
 
-      <Instruction>
-        <strong>Snabbhet är bra men noggrannhet är viktigast!</strong> Att vara både snabb och korrekt kommer ge högst poäng.
-        Lycka till! 🤩
-      </Instruction>
+        <p>
+          I det här spelet tar du eller ni rollen som medarbetare på en nyhetssajt. Ni får uppdrag av er chefredaktör ({{boss}}) att publicera nyheter som kan få stor spridning. Det är ert uppdrag att faktagranska nyheten för att sedan välja en vinkel om hur ni förmedlar nyheten.
+        </p>
 
-      <h2>Skriv namnet på er nyhetssajt för att börja spela!</h2>
+        <p>
+          Använd din dator eller mobil att eftersöka fakta och andra källor. Räkna med att det tar 15-30 minuter att slutföra.
+        </p>
 
-      <Interactable class="focuscolor">
-        <input type="text" placeholder="Nyhetssajtens namn" v-model="name" ref="name" @keydown.enter="startGame()" maxlength="30"/>
-      </Interactable>
+        <Instruction>
+          <strong>Snabbhet är bra men noggrannhet är viktigast!</strong> Att vara både snabb och korrekt kommer ge högst poäng.
+          Lycka till! 🤩
+        </Instruction>
 
-      <ContinueButton :enabled="name.length > 0" @click.once="startGame()">Spela!</ContinueButton>
+        <h2>Skriv namnet på er nyhetssajt för att börja spela!</h2>
 
-    </CenterColumn>
+        <Interactable class="focuscolor">
+          <input type="text" placeholder="Nyhetssajtens namn" v-model="name" ref="name" @keydown.enter="startGame()" maxlength="30"/>
+        </Interactable>
 
+        <ContinueButton :enabled="name.length > 0" @click.once="startGame()">Spela!</ContinueButton>
+
+      </CenterColumn>
+    </div>
 
     <div  v-if="players.length">
 
@@ -38,19 +41,23 @@
 
     </div>
 
-    <hr />
+    <div>
 
-    <CenterColumn>
-      <h2>Om Dramafabriken</h2>
-      Koncept & design: <a href="http://www.fabel.se" target="_blank">Fabel Kommunikation</a>, <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
-      <br />
-      Utveckling: <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
-      <br />
-      Finansiering: <a href="https://demokratiskasamtalet.se/" target="_blank">Det demokratiska samtalet</a>
-      <br /> <br />
-      <router-link :to="{ name: 'Info'}">Läs mer om Dramafabriken</router-link>
+      <hr />
 
-    </CenterColumn>
+      <CenterColumn>
+        <h2>Om Dramafabriken</h2>
+        Koncept & design: <a href="http://www.fabel.se" target="_blank">Fabel Kommunikation</a>, <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
+        <br />
+        Utveckling: <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
+        <br />
+        Finansiering: <a href="https://demokratiskasamtalet.se/" target="_blank">Det demokratiska samtalet</a>
+        <br /> <br />
+        <router-link :to="{ name: 'Info'}">Läs mer om Dramafabriken</router-link>
+
+      </CenterColumn>
+
+    </div>
 
   </div>
 </template>
@@ -108,6 +115,10 @@ export default {
     flex-direction: column;
     display: flex;
     padding-bottom: 50px;
+  }
+
+  .main{
+    flex: 1;
   }
 
 </style>

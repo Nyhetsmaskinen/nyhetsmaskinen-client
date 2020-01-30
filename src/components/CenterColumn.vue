@@ -23,7 +23,7 @@ export default {
     max-width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;
   }
 
   .col{

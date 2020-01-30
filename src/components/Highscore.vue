@@ -80,9 +80,12 @@ export default {
 
   .players{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     align-items: center;
+    overflow-x: scroll;
+    overflow-y: visible;
+    padding: 10px;
   }
 
   .players > div{
