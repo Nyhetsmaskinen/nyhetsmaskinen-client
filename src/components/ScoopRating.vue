@@ -121,11 +121,15 @@ progress {
   border: none;
 }
 
-::-webkit-progress-value, ::-moz-progress-bar {
+::-webkit-progress-value{
   background-color: limegreen;
 }
 
-progress, ::-webkit-progress-bar {
+::-moz-progress-bar {
+  background-color: limegreen;
+}
+
+::-webkit-progress-bar {
   background-color: red;
 }
 

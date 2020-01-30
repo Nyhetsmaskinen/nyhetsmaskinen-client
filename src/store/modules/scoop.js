@@ -79,8 +79,11 @@ export default {
     getCommentRating: (state,getters) => (scoop) => {
       let str = "Bra bedömning!"
       let d = getters.getDRating(scoop)
-      if(d >= 2){
-        str = "Ajdå, det var inte helt rätt bedömt."
+      if(d >= 3){
+        str = "Ajdå, det blev felbedömt."
+      }
+      if(d == 2){
+        str = "Det var inte helt rätt bedömt."
       }
       else if(d == 1){
         str = "Ganska bra bedömning, tycker jag."
