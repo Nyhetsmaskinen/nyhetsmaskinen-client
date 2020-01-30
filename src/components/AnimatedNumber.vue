@@ -3,14 +3,11 @@
     <span v-if="showPlus && valueInt > 0">+</span>
 
     <span v-if="show && (!hideZero || valueInt != 0)">
-      <span>
-        {{valueInt}}
-      </span>
-
-      <slot>
-      </slot>
-      
+      {{valueInt}}
     </span>
+
+    <slot>
+    </slot>
 
   </div>
 </template>
