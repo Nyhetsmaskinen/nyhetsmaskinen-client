@@ -65,8 +65,4 @@ input[type="radio"]:checked+span{
   text-decoration: underline;
 }
 
-label:not(.lock):hover{
-  text-decoration: underline;
-}
-
 </style>

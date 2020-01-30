@@ -48,7 +48,7 @@ export default {
       return scoop.questions.filter(q => q.answerUser == q.answerCorrect).length;
     },
     getPCorrect: (state,getters) => (scoop) => {
-      return 2*getters.getNCorrect(scoop);
+      return getters.getNCorrect(scoop);
     },
     getCommentCorrect: (state,getters) => (scoop) => {
       let str = "Wow, väldigt bra granskat!"

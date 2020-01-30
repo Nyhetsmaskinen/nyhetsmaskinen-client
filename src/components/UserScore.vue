@@ -17,7 +17,7 @@
         <h2>
           <AnimatedNumber :end="user.score.correct" v-model="nCorrect">
             <!--Clap v-for="i in nCorrect" :key="i" emoji="🧐"></Clap-->
-            <Clap emoji="🧐" :small="true"></Clap>
+            <Clap emoji="🔍" :small="true"></Clap>
           </AnimatedNumber>
         </h2>
       </div>

@@ -1,11 +1,16 @@
 <template>
   <div class="AnimatedNumber">
-    <span v-if="show">
-      {{valueInt}}
-    </span>
+    <span v-if="showPlus && valueInt > 0">+</span>
 
-    <slot>
-    </slot>
+    <span v-if="show && (!hideZero || valueInt != 0)">
+      <span>
+        {{valueInt}}
+      </span>
+
+      <slot>
+      </slot>
+      
+    </span>
 
   </div>
 </template>
@@ -35,6 +40,8 @@ export default {
     steps: {type: Number, default: 100},
     delay: Number,
     show: {type: Boolean, default: true},
+    showPlus: {type: Boolean, default: false},
+    hideZero: {type: Boolean, default: false},
   },
   computed: {
     /*...mapState([
@@ -91,6 +98,10 @@ export default {
 
 .AnimatedNumber{
   display: inline-block;
+}
+
+span{
+  display: inline-flex;
 }
 
 </style>

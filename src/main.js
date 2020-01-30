@@ -9,7 +9,8 @@ Vue.config.productionTip = false
 
 //Vue.prototype.$io = io
 //Vue.prototype.$socket = io('ws://localhost:3000')
-Vue.prototype.$socket = io('wss://dramafabriken.herokuapp.com')
+//Vue.prototype.$socket = io('wss://dramafabriken.herokuapp.com')
+Vue.prototype.$socket = io(process.env.VUE_APP_WS_SERVER)
 
 new Vue({
   router,

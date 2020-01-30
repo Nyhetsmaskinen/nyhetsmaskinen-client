@@ -3,7 +3,7 @@
 
     <CenterColumn>
       <Instruction>
-        <strong>{{scoop.name}}</strong> {{scoop.description}}
+        <strong>{{scoop.name}}</strong> {{scoop.description}} Granska nyheten! 🔍
       </Instruction>
     </CenterColumn>
 

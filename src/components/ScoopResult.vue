@@ -5,12 +5,12 @@
     Tidsbonus:
     <br />
     <span class="bluetext">
-      <AnimatedNumber :end="pTime" :delay="1000"></AnimatedNumber>
+      <AnimatedNumber :end="pTime" :hideZero="true" :delay="1000"></AnimatedNumber>
       ❤️
     </span>
   </h2>
   <h2>
-    <Clap emoji="🧐" :small="true"></Clap>
+    <Clap emoji="🔍" :small="true"></Clap>
     <span v-if="nCorrect == 1">
       1 korrekt granskning:
     </span>
@@ -28,7 +28,7 @@
     Bedömning:
     <br />
     <span class="bluetext">
-      <AnimatedNumber :end="pRating" :delay="3000"></AnimatedNumber>
+      <AnimatedNumber :end="pRating" :showPlus="true" :duration="0" :steps="1" :delay="3000"></AnimatedNumber>
       ❤️
     </span>
   </h2>
