@@ -3,15 +3,17 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import io from 'socket.io-client'
-import { addScript } from '@/utils'
+import { addScripts } from '@/utils'
 import { scripts } from '@/scripts.json'
 
 Vue.config.productionTip = false
 
+addScripts(scripts[process.env.NODE_ENV]);
+
 //Load external scripts based on environment
-scripts[process.env.NODE_ENV].forEach((s) => {
+/*scripts[process.env.NODE_ENV].forEach((s) => {
   addScript(s);
-});
+});*/
 
 Vue.prototype.$socket = io(process.env.VUE_APP_WS_SERVER)
 
