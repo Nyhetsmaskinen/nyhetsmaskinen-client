@@ -3,14 +3,19 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import io from 'socket.io-client'
-//const WebSocket = require('ws');
+import { addScript } from '@/utils'
+import { scripts } from '@/scripts.json'
 
 Vue.config.productionTip = false
 
-//Vue.prototype.$io = io
-//Vue.prototype.$socket = io('ws://localhost:3000')
-//Vue.prototype.$socket = io('wss://dramafabriken.herokuapp.com')
+//Load external scripts based on environment
+scripts[process.env.NODE_ENV].forEach((s) => {
+  addScript(s);
+});
+
 Vue.prototype.$socket = io(process.env.VUE_APP_WS_SERVER)
+
+
 
 new Vue({
   router,
