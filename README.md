@@ -1,4 +1,4 @@
-# Dramafabriken
+# Dramafabriken, frontend client
 
 ## Project setup
 ```
