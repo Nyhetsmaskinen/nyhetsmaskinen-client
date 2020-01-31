@@ -10,9 +10,9 @@ function addScript (src) {
 }
 
 function addScripts (srcs) {
-  var script = addScript(srcs[0]);
-  srcs.shift();
   if(srcs.length > 0){
+    var script = addScript(srcs[0]);
+    srcs.shift();
     script.onload = function() {
       addScripts(srcs)
     };
