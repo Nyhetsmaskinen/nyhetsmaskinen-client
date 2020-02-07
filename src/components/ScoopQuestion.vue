@@ -2,15 +2,12 @@
   <div class="ScoopQuestion">
 
     <Interactable :correct="reveal ? correct : -1">
-
-      <h3>
+      <p>
         <strong>{{question.text}}</strong>
-      </h3>
-
+      </p>
       <div v-for="(answer,id) in question.answers" :key="id">
         <ScoopQuestionAnswer :text="answer" :questionName="'q'+question.__ob__.dep.id" :val="id" v-model="question.answerUser" :lock="reveal" :correct="reveal && isCorrectId(id)"></ScoopQuestionAnswer>
       </div>
-
     </Interactable>
 
   </div>

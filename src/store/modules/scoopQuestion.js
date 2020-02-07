@@ -19,6 +19,9 @@ export default {
   actions: {
   },
   getters: {
+    answered(state, payload){
+      return payload.answerUser != -1;
+    },
     /*isCorrectAnswer: (state) => (question) {
       return question.answerCorrect == answerUser
     },*/

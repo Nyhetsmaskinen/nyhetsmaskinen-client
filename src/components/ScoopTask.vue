@@ -3,7 +3,7 @@
 
     <CenterColumn>
       <Instruction>
-        <strong>{{scoop.name}}</strong> {{scoop.description}} Granska nyheten! 🔍
+        <strong>{{scoop.name}}</strong> {{scoop.description}} 🔍
       </Instruction>
     </CenterColumn>
 
@@ -43,8 +43,8 @@
       </div>
 
       <div class="sidebyside">
-        <ContinueButton @click.once="finishTime()">Klar!</ContinueButton>
-        <ContinueButton @click.once="finish()" :enabled="!intervalTimer">Gå vidare!</ContinueButton>
+        <ContinueButton @click.once="finishTime()" :enabled="getNAnswers(scoop) > 0">Klar!</ContinueButton>
+        <ContinueButton @click.once="finish()" :enabled="!intervalTimer" :class="{'hidden': intervalTimer}">Gå vidare!</ContinueButton>
       </div>
 
     </Step>
@@ -64,7 +64,7 @@ import OG from '@/components/OG.vue'
 
 import ogs from 'open-graph-scraper'
 
-//import { createNamespacedHelpers } from 'vuex'
+import { mapGetters } from 'vuex'
 //const { mapState } = createNamespacedHelpers('namespace1/namespace2')
 
 export default {
@@ -92,9 +92,9 @@ export default {
     /*...mapState([
       'stateField',
     ]),*/
-    /*...mapGetters([
-      'nImmune'
-    ])*/
+    ...mapGetters('newsroom/scoop',[
+      'getNAnswers'
+    ])
   },
   methods: {
 
@@ -159,6 +159,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  padding: 10px;
 }
 
 .social{

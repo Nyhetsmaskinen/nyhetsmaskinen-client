@@ -50,7 +50,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-  .OG{
+  .OG{}
+
+  .OG *{
+    color: white !important;
   }
 
   img{
@@ -58,7 +61,6 @@ export default {
   }
 
   a{
-    color: black;
     font-weight: normal;
   }
 

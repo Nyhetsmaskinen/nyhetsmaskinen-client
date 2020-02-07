@@ -42,7 +42,10 @@ export default {
       return scoop.timeLimit - scoop.time
     },
     getPTime: (state,getters) => (scoop) => {
-      return 5*getters.getTimeRemaining(scoop)
+      return 5*(getters.getTimeRemaining(scoop)+60)
+    },
+    getNAnswers: () => (scoop) => {
+      return scoop.questions.filter(q => q.answerUser != -1).length;
     },
     getNCorrect: () => (scoop) => {
       return scoop.questions.filter(q => q.answerUser == q.answerCorrect).length;

@@ -94,7 +94,7 @@ export default {
   box-shadow: 5px 5px 0 DodgerBlue;
   border-radius: 5px;
   padding: 5px;
-  transform: rotateZ(-5deg);
+  /*transform: rotateZ(-5deg);*/
 }
 
 .score{

@@ -66,9 +66,9 @@ export default {
   }
 
   .content > div{
-    background: white;
     padding: 10px;
     border-radius: 15px;
+    color: white;
   }
 
   .speech{
@@ -79,6 +79,7 @@ export default {
   }
 
   .triangles{
+    position: relative;
     max-width: 60px;
     height: 30px;
     flex: 1;
@@ -86,6 +87,7 @@ export default {
     left: 5px;
     margin: 0;
     padding: 0;
+    filter: drop-shadow(5px 5px 0px LightSkyBlue);
   }
 
   .triangle1{
@@ -100,6 +102,10 @@ export default {
 
   .boss{
     font-size: 4em;
+  }
+
+  a{
+    color: white;
   }
 
 </style>

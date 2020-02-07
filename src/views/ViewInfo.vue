@@ -3,11 +3,11 @@
     <CenterColumn>
 
       <h1>
-        Om Dramafabriken
+        Om Nyhetsmaskinen
       </h1>
 
       <p>
-        Dramafabriken är ett pedagogiskt verktyg för att väcka uppmärksamhet och diskutera vikten av källkritik i vardagen. Det är tänkt som ett stöd för dig som till exempel driver studiecirklar, undervisar i skolan eller själv vill lära dig mer om källkritik. Du kan använda det som övning själv eller utmana andra på samma övning. Att göra alla övningar beräknas ta cirka 15-30 minuter.
+        Nyhetsmaskinen är ett pedagogiskt verktyg för att väcka uppmärksamhet och diskutera vikten av källkritik i vardagen. Det är tänkt som ett stöd för dig som till exempel driver studiecirklar, undervisar i skolan eller själv vill lära dig mer om källkritik. Du kan använda det som övning själv eller utmana andra på samma övning. Att göra alla övningar beräknas ta cirka 15-30 minuter.
       </p>
 
       <p>
@@ -20,6 +20,30 @@
 
       <p>
         För frågor om innehållet, vänligen kontakta oss på <a href="mailto:info@fabel.se">info@fabel.se</a>.
+      </p>
+
+      <h2>FAQ</h2>
+      <h3>
+        Hur har ni gjort bedömningarna om nyheterna är sanna eller falska?
+      </h3>
+      <p>
+        I spelet finns en bedömning utifrån sanningshalt. Den värderingen är en samlad bedömning utifrån hur väl nyheten har täckning för vad som skrivs i rubrik och text, om fokus ligger på relevanta fakta och omständigheter för händelser eller om det finns andra element som avser att vilseleda läsaren. Vi förstår dock att detta innehåller gråzoner och vi vill poängtera att detta är en bedömning som vi redogör för i avsnittet “Läs mer om nyheten” vid varje avsnitt.
+      </p>
+
+      <h2>Resurser</h2>
+      <p>
+        Vill du lära dig mer om nyhetsgranskning och källkritik är det här bra ställen att kolla på:
+        <ul>
+          <li>
+            <a href="https://statensmedierad.se/larommedier/mikformigdigitalutbildning.1871.html#start" target="_blank">Statens Medieråd</a>
+          </li>
+          <li>
+            <a href="https://internetstiftelsen.se/guide/kallkritik-pa-internet/" target="_blank">Internetstiftelsen</a>
+          </li>
+          <li>
+            <a href="https://mikoteket.se" target="_blank">Mikoteket</a>
+          </li>
+        </ul>
       </p>
 
       <ContinueButton @click="home()">Tillbaka till startsidan</ContinueButton>

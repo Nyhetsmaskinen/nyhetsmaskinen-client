@@ -31,16 +31,20 @@
         }
       ],
       "info": {
-        "text": "Inlägget får uppmärksamhet i flera medier [1,2]",
+        "text": "Den 3 september 2019 håller svenske forskaren Magnus Söderlund ett föredrag på matmässan Gastro Summit i Stockholm, med den provokativa titeln “Kan du tänka dig att äta människokött?”. Söderlund är professor på Handelshögskolan i Stockholm och forskar bland annat på konsumentbeteenden och attityder kring mat. Under föredraget får publiken bland annat ta ställning till om de kan tänka sig att äta sojakött, myror, katter men också människokött, som ett led i att undersöka var gränsen går för vad deltagarna kan acceptera. Under en intervju med svenska TV4 görs i rubriksättningen kopplingen till klimatet och människoköttet ges en stor roll. (1) Följande dagar gör flera svenska nyhetssajter olika tolkningar där Söderlund bland annat sägs “föreslå kannibalism” (2) eller bildsätts med zombier (3). När nyheten till slut tre dagar senare når Breitbart påstås bland annat Söderlunds forskning säga att svenskars “konservativa åsikter kan göra dem svåra att övertyga” (4). Varken innan eller efter föredraget har Magnus Söderlund föreslagit att människokött skulle vara ett rimligt alternativ, inte heller att det skulle vara en tänkbar väg för att “rädda klimatet”. Journalisten Patrik Oksanen på MittMedia gjorde en genomgång av händelseförloppet drygt två veckor senare. (5) Föredragets titel är sann men varken proportionerna eller kopplingarna till klimatarbete eller Magnus Söderlunds forskning är rimliga, därför bedöms nyheten vara mestadels falsk. Handelshögskolan har också kommenterat händelsen på sin webbplats (6).",
         "references": [
-          "https://www.svt.se",
-          "https://www.dn.se"
+          "https://www.tv4.se/efter-fem/klipp/forskaren-unders%C3%B6ker-m%C3%B6jligheten-att-%C3%A4ta-m%C3%A4nniskok%C3%B6tt-finns-m%C3%A5nga-tabun-12496854",
+          "https://www.varldenidag.se/nyheter/foreslar-kannibalism-for-att-radda-klimatet/repsik!OumUX6wJFnmIKe6H5O3uLw/",
+          "https://sverigesradio.se/sida/artikel.aspx?programid=106&artikel=7294530",
+          "https://www.breitbart.com/europe/2019/09/06/swedish-scientist-proposes-cannibalism-fight-climate-change",
+          "https://www.helahalsingland.se/artikel/oksanen-sa-spred-sig-lognen-om-manniskokottet-och-klimatet",
+          "https://www.hhs.se/sv/forskning/institut/institute-for-research/institute-for-research/2019/magnus-soderlund-in-the-media/"
         ]
       }
     },
     {
-      "name": "Bråk kring Muminparken!",
-      "description": "En storm håller på att blåsa upp i Karlstad. Det här kan bli nationella nyheter som engagerar! Två politiska läger är i luven på varandra. De bråkar om de välkända och populära Mumintrollen och det verkar vara många slag under bältet. Om vi är snabba på den här nyheten kan vi få många delningar. Kolla upp det här och publicera snabbt.",
+      "name": "Bråk i Muminlandet!",
+      "description": "En storm har blåst upp i Karlstad. Två politiska läger är i luven på varandra om ett nytt Muminland som ska byggas. Nu sägs det att det gått så långt att politiker fått dödshot. Kan det verkligen stämma? Kolla upp det här och publicera snabbt. Den här nyheten ligger bakom en så kallad betalvägg men ni kan säkert hitta uppgifter på annat håll. Lycka till med granskningen!",
       "social": {
         "url": "https://www.vf.se/2019/11/13/politiker-polisanmaler-dodshot-kopplat-till-muminparken/"
       },
@@ -48,31 +52,52 @@
       "timeLimit": 300,
       "questions": [
         {
-          "text": "Nyheten kommer via Värmlands folkblads hemsida Vad är det för en kanal?",
-          "answers": ["Alternativ 1"],
+          "text": "Nyheten kommer via Värmlands folkblads hemsida. Vad är det för en kanal?",
+          "answers": [
+            "Socialdemokratisk dagstidning som ges ut i Värmland.",
+            "Oberoende nyhetssajt inriktad på politik, skvaller och sociala medier",
+            "Medlemstidning för socialdemokrater i Värmland"
+          ],
           "answerCorrect": 0
         },
         {
-          "text": "Vad heter podden som som står i centrum för konflikten?",
-          "answers": ["Karlstadpartietpodden (nr 5 2019-11-13)"],
+          "text": "Etableringen av en temapark har mött mycket protester. Vad är den vanligaste kritiken?",
+          "answers": [
+            "Skutberget är ett naturområde som många vill bevara",
+            "Företaget är känt för att behandla personalen dåligt.",
+            "Det befaras bli en stor förlustaffär för kommunen."
+          ],
           "answerCorrect": 0
         },
         {
-          "text": "Vad heter företaget som äger Muminland?",
-          "answers": ["Lataamo OY"],
-          "answerCorrect": 0
+          "text": "När beslutade Karlstads kommun om den nya detaljplanen med en temapark på Skutberget?",
+          "answers": [
+            "25:e april 2017",
+            "19:e december 2019",
+            "Beslutet är inte taget"
+          ],
+          "answerCorrect": 1
         },
         {
-          "text": "Vlka är de de viktigaste aktörerna i nyheten?",
-          "answers": ["Alternativ 1"],
+          "text": "Konflikten om Muminvärlden i Karlstad tog under hösten 2018 en oväntad politisk vändning. Vad hände?",
+          "answers": [
+            "Ett nytt parti valdes in i Kommunfullmäktige, med Muminparken som sin huvudfråga.",
+            "Två personer dömdes till fängelse efter att ha bränt Mumin-figurer utanför Rådhuset.",
+            "Upphovspersonen Tove Jansson hotade att stämma kommunen om de tillät bygget."
+          ],
           "answerCorrect": 0
         }
       ],
       "info": {
-        "text": "Inlägget får uppmärksamhet i flera medier [1,2]",
+        "text": "Den 25 april 2017 lanseras planerna om etableringen av en temapark med Mumin-tema på Skutberget utanför Karlstad (1). Hur friluftsområdet ska utvecklas blir snabbt till en infekterad fråga som engagerar många i Karlstad. Motståndare till muminlandet uppmanar medborgare i kommunen att protestera (2) och inför valet 2018 startas det lokala partiet Karlstadpartiet Livskvalité (KPL) vars huvudfråga är motstånd till muminvärlden. Partiet får 2997 röster vilket motsvarar 4,75% (3). I under oktober månad 2019 polisanmäler det socialdemokratiska kommunalrådet Linda Larsson två incidenter om dödshot kopplade till bygget. När nyheten om polisanmälningarna kommer ut bemöts det som “fake news” i KPL:s podd. Uttalandet får dock hård kritik, Karlstadpartiet Livskvalitet ber om ursäkt (4) och podcasten klipps om. Originalinspelningen finns dock kvar på YouTube (5). Den 19 december 2019 tog kommunfullmäktige i Karlstad beslut om att godkänna detaljplanen för Skutberget där Muminlandet ska ligga (6). Dagens Nyheter gjorde i början av 2020 en sammanfattning över hela hela förloppet (7). Sammantaget finns inga uppgifter som motsäger att polisanmälan gjorts eller att hoten faktiskt skulle ha skett och därför bedöms nyheten vara sann.",
         "references": [
-          "https://www.svt.se",
-          "https://www.dn.se"
+          "https://www.svt.se/nyheter/lokalt/varmland/det-har-ar-skutbergets-framtid",
+          "https://www.skrivunder.com/radda_skutberget_fran_stangsel_och_avgifter",
+          "https://data.val.se/val/val2018/slutresultat/K/kommun/17/80/index.html",
+          "https://www.svt.se/nyheter/lokalt/varmland/karlstadpartiet-ber-om-ursakt-efter-uttalande-om-fake-news",
+          "https://youtu.be/Cwkf4uA_G00?t=3469",
+          "https://karlstad.se/karlstadvaxer/projekt/skutberget--temapark-och-utvecklat-friluftsliv/",
+          "https://www.dn.se/ekonomi/mumin-skapar-hatstorm-och-partisplittring/"
         ]
       }
     },
@@ -93,7 +118,7 @@
         },
         {
           "text": "Vilken typ av skola är den som nyheten handlar om?",
-          "answers": ["Gymnasieskola","Låg- och mellanstadieskola F-6","Grundskola F-9 (R)"],
+          "answers": ["Gymnasieskola","Låg- och mellanstadieskola F-6","Grundskola F-9"],
           "answerCorrect": 2
         },
         {

@@ -1,46 +1,57 @@
 <template>
   <div class="ScoopResult">
 
-  <h2>
+  <h3>
     Tidsbonus:
-    <br />
-    <span class="bluetext">
-      <AnimatedNumber :end="pTime" :hideZero="true" :delay="1000"></AnimatedNumber>
-      ❤️
-    </span>
-  </h2>
-  <h2>
-    <Clap emoji="🔍" :small="true"></Clap>
+  </h3>
+  <div class="sidebyside">
+    <Clap emoji="⏳"></Clap>
+    <h1>
+      <AnimatedNumber :end="pTime" :delay="1000"></AnimatedNumber>
+    </h1>
+    <Clap emoji="⏳"></Clap>
+  </div>
+
+  <h3>
     <span v-if="nCorrect == 1">
       1 korrekt granskning:
     </span>
     <span v-else>
       {{nCorrect}} korrekta granskningar:
     </span>
-    <br />
-    <div class="bluetext">
+  </h3>
+  <div class="sidebyside">
+    <Clap emoji="🔍"></Clap>
+    <h1>
       x<AnimatedNumber :end="pCorrect" :delay="2000" v-model="iCorrect"></AnimatedNumber>
-        <!--Clap v-for="i in iCorrect" :key="i" class="small"></Clap-->
-    </div>
-  </h2>
-  <h2>
-    <Clap emoji="🤔" :small="true"></Clap>
+    </h1>
+    <Clap emoji="🔍"></Clap>
+  </div>
+
+  <h3>
     Bedömning:
-    <br />
-    <span class="bluetext">
+  </h3>
+  <div class="sidebyside">
+    <Clap emoji="🤔"></Clap>
+    <h1>
       <AnimatedNumber :end="pRating" :showPlus="true" :duration="0" :steps="1" :delay="3000"></AnimatedNumber>
-      ❤️
-    </span>
-  </h2>
+    </h1>
+    <Clap emoji="🤔"></Clap>
+  </div>
 
-  <hr />
+  <hr class="white"/>
 
-  <h1>
-    <span class="bluetext">
+  <div class="sidebyside">
+    <h2>
+      <Clap emoji="❤️"></Clap>
+    </h2>
+    <h1 class="large">
       <AnimatedNumber :end="pScoop" :delay="4000"></AnimatedNumber>
-      ❤️
-    </span>
-  </h1>
+    </h1>
+    <h2>
+      <Clap emoji="❤️"></Clap>
+    </h2>
+  </div>
 
   </div>
 </template>
@@ -114,12 +125,26 @@ export default {
 
 .ScoopResult{
   text-align: center;
+
+}
+
+.ScoopResult *{
+  color: white !important;
 }
 
 h2 {
   /*display: flex;
   align-items: center;
   justify-content: center;*/
+}
+
+.sidebyside{
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.sidebyside > *{
+  margin: 0 10px 0 10px;
 }
 
 </style>

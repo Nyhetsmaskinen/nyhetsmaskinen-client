@@ -1,8 +1,10 @@
 <template>
-  <div class="ScoopQuestionAnswer" :class="{'showcorrect': correct}">
+  <div class="ScoopQuestionAnswer">
 
-    <label :class="{'lock': lock}">
+    <label :class="{'showCorrect': correct, 'lock': lock}">
+
       <input :name="questionName" type="radio" ref="radio" :value="val" @change="updateAnswer()" :disabled="lock"/>
+      <span class="check"></span>
       <span class="text">
         {{text}}
       </span>
@@ -55,14 +57,6 @@ export default {
 <style scoped lang="scss">
 
 .ScoopQuestionAnswer{
-}
-
-input[type="radio"]:checked+span{
-  font-weight: bold;
-}
-
-.showcorrect{
-  text-decoration: underline;
 }
 
 </style>

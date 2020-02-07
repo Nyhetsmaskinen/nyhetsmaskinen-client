@@ -5,7 +5,7 @@
 
       <CenterColumn>
 
-        <h1>Dramafabriken</h1>
+        <h1>Nyhetsmaskinen</h1>
 
         <p>
           I det här spelet tar du eller ni rollen som medarbetare på en nyhetssajt. Ni får uppdrag av er chefredaktör ({{boss}}) att publicera nyheter som kan få stor spridning. Det är ert uppdrag att faktagranska nyheten för att sedan välja en vinkel om hur ni förmedlar nyheten.
@@ -46,14 +46,14 @@
       <hr />
 
       <CenterColumn>
-        <h2>Om Dramafabriken</h2>
+        <h2>Om Nyhetsmaskinen</h2>
         Koncept & design: <a href="http://www.fabel.se" target="_blank">Fabel Kommunikation</a>, <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
         <br />
         Utveckling: <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
         <br />
         Finansiering: <a href="https://demokratiskasamtalet.se/" target="_blank">Det demokratiska samtalet</a>
         <br /> <br />
-        <router-link :to="{ name: 'Info'}">Läs mer om Dramafabriken</router-link>
+        <router-link :to="{ name: 'Info'}">Läs mer om Nyhetsmaskinen</router-link>
 
       </CenterColumn>
 

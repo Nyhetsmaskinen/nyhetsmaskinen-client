@@ -10,7 +10,7 @@
         <Step>
           <Instruction>
             <p>
-              God morgon! Kul att ni kunde hoppa in som vikarier 👏 Här på {{name}} jobbar vi effektivt och snabbt. En missad nyhet är en missad möjlighet.
+              God morgon! Kul att ni kunde hoppa in som vikarier 👏 Här på {{name}} jobbar vi effektivt och snabbt. En missad nyhet är en missad möjlighet. Ta fram era telefoner, datorer eller paddor! Ni kommer behöva göra efterforskningar för att kontrollera fakta i nyheterna och avgöra om nyheterna faktiskt går att lita på innan vi sprider dem vidare.
             </p>
             <p>
               Är ni redo att ta er an det första scoopet?
@@ -101,8 +101,25 @@
         <CenterColumn>
           <Highscore></Highscore>
           <Instruction>
-            Tack för ditt jobb på {{name}}!
+            <p>
+              Tack för ditt jobb på {{name}}!
+            </p>
+            <p>
+              Vill du lära dig mer om nyhetsgranskning och källkritik är det här bra ställen att kolla på:
+              <ul>
+                <li>
+                  <a href="https://statensmedierad.se/larommedier/mikformigdigitalutbildning.1871.html#start" target="_blank">Statens Medieråd</a>
+                </li>
+                <li>
+                  <a href="https://internetstiftelsen.se/guide/kallkritik-pa-internet/" target="_blank">Internetstiftelsen</a>
+                </li>
+                <li>
+                  <a href="https://mikoteket.se" target="_blank">Mikoteket</a>
+                </li>
+              </ul>
+            </p>
           </Instruction>
+
           <div class="sidebyside">
             <ContinueButton @click.once="restart()">Tack själv!</ContinueButton>
             <ContinueButton @click.once="restart()">Tack & hej!</ContinueButton>

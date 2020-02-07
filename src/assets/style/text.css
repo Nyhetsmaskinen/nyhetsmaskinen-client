@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:100,300,400,500,600,800');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,800,900');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,600');
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,500,600,800,900');
+/*@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,500,600,800,900');*/
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 
 body, button, table{
-  font-family: "Lato";
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 1.1em;
-  color: rgb(50,50,50);
+  color: black;
 }
 
 a{
@@ -25,17 +26,20 @@ h1, .h1{
   font-family: "Roboto Condensed";
   font-weight: bold;
   font-size: 10vmin;
-  color: rgb(60,60,60);
+  color: rgb(30,30,30);
   margin-bottom: 0.2em;
   margin-top: 0.2em;
-
   hyphens: auto;
+}
+
+h1.large{
+  font-size: 20vmin;
 }
 
 h2, .h2{
   font-family: "Roboto Condensed";
   font-weight: 500;
-  color: gray;
+  color: rgb(50,50,50);
   font-size: 1.6em;
   margin-bottom: 0.5em;
   margin-top: 0.2em;
@@ -48,7 +52,8 @@ h3, .h3{
   font-size: 1.1em;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
-  color: rgb(100,100,100);
+  color: rgb(50,50,50);
+  text-transform: uppercase;
 }
 
 h4 {

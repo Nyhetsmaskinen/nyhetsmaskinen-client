@@ -6,41 +6,58 @@
       </Instruction>
 
       <Interactable>
+
         <label :class="{'showCorrect': rated && scoop.rating == 0, 'lock': rated}" >
           <input type="radio" value="0" :name="'rating-'+$data.__ob__.dep.id" v-model="rating" :disabled="rated" />
-          <span>
-            Sann: I allt väsentligt är denna nyhet sann och den fakta som presenteras är relevant.
-          </span>
+          <span class="check"></span>
+          <div>
+            <ProgressBackground :ratio="1" class="header">SANN</ProgressBackground>
+            <span class="text">
+              I allt väsentligt är denna nyhet sann och den fakta som presenteras är relevant.
+            </span>
+          </div>
         </label>
+
         <label :class="{'showCorrect': rated && scoop.rating == 1, 'lock': rated}" >
           <input type="radio" value="1" :name="'rating-'+$data.__ob__.dep.id" v-model="rating" :disabled="rated" />
-          <span>
-            Mestadels sann: Sammantaget är denna nyhet sann och relevant men den innehåller till viss del bristfällig information, alternativt är inaktuell eller vilseledande.
-          </span>
+          <span class="check"></span>
+          <div>
+            <ProgressBackground :ratio="0.66" class="header">MESTADELS SANN</ProgressBackground>
+            <span class="text">
+              Sammantaget är denna nyhet sann och relevant men den innehåller till viss del bristfällig information, alternativt är inaktuell eller vilseledande.
+            </span>
+          </div>
         </label>
+
         <label :class="{'showCorrect': rated && scoop.rating == 2, 'lock': rated}" >
           <input type="radio" value="2" :name="'rating-'+$data.__ob__.dep.id" v-model="rating" :disabled="rated" />
-          <span>
-            Mestadels falsk: Informationen i denna nyhet är mestadels vilseledande eller falsk men det finns samtidigt flera delar som är sanna och relevanta.
-          </span>
+          <span class="check"></span>
+          <div>
+            <ProgressBackground :ratio="0.33" class="header">MESTADELS FALSK</ProgressBackground>
+            <span class="text">
+              Informationen i denna nyhet är mestadels vilseledande eller falsk men det finns samtidigt flera delar som är sanna och relevanta.
+            </span>
+          </div>
         </label>
         <label :class="{'showCorrect': rated && scoop.rating == 3, 'lock': rated}" >
           <input type="radio" value="3" :name="'rating-'+$data.__ob__.dep.id" v-model="rating" :disabled="rated" />
-          <span>
-            Falsk: I allt väsentligt är denna nyhet påhittad, kraftigt vilseledande eller dess innehåll överdrivet vinklat.
-          </span>
+          <span class="check"></span>
+          <div>
+            <ProgressBackground :ratio="0" class="header">FALSK</ProgressBackground>
+            <span class="text">
+              I allt väsentligt är denna nyhet påhittad, kraftigt vilseledande eller dess innehåll överdrivet vinklat.
+            </span>
+          </div>
         </label>
 
-        <br />
-
-        <div class="progressContainer">
-
-
-        <progress :value="3-rating" max="3" v-if="rating != -1"></progress>
-</div>
       </Interactable>
 
-      <ContinueButton :enabled="rating != -1" @click.once="nextStep()">Klar!</ContinueButton>
+      <div class="sidebyside">
+        <ContinueButton :enabled="rating != -1" @click.once="setRating()">Klar!</ContinueButton>
+        <ContinueButton :enabled="rated" :class="{'hidden': !rated}" @click.once="nextStep()">Gå vidare!</ContinueButton>
+      </div>
+
+      <!--ContinueButton :enabled="rating != -1" @click.once="nextStep()">Klar!</ContinueButton-->
 
   </div>
 </template>
@@ -50,6 +67,7 @@
 import Instruction from '@/components/Instruction.vue'
 import Interactable from '@/components/Interactable.vue'
 import ContinueButton from '@/components/ContinueButton.vue'
+import ProgressBackground from '@/components/ProgressBackground.vue'
 
 import { mapGetters } from 'vuex'
 //const { mapState } = createNamespacedHelpers('namespace1/namespace2')
@@ -59,7 +77,8 @@ export default {
   components: {
     Instruction,
     Interactable,
-    ContinueButton
+    ContinueButton,
+    ProgressBackground
   },
   data: function () {
     return {
@@ -76,11 +95,13 @@ export default {
     ]),
   },
   methods: {
-    nextStep: function(){
+    setRating: function () {
       this.$store.commit('newsroom/scoop/setRatingUser', {scoop: this.scoop, 'rating':this.rating})
-      this.$store.commit('newsroom/nextStep')
       this.$socket.emit('player update rating', this.ratingUser);
       this.rated = true;
+    },
+    nextStep: function(){
+      this.$store.commit('newsroom/nextStep')
     }
   },
   mounted: function () {
@@ -94,43 +115,23 @@ export default {
 .ScoopRating{
 }
 
-input[type="radio"]:checked+span{
+input[type="radio"]:checked+div{
   font-weight: bold;
 }
 
-.showCorrect{
-  text-decoration: underline;
+.header{
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  display: inline-block;
 }
 
-.progressContainer{
-  height: 20px;
-  background: gray;
-  border-radius: 5px;
-  overflow: hidden;
-  border: none;
-  position: relative;
-}
+/*.lock:not(.showCorrect){
+  filter: opacity(0.25);
+}*/
 
-progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-appearance: none;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-::-webkit-progress-value{
-  background-color: limegreen;
-}
-
-::-moz-progress-bar {
-  background-color: limegreen;
-}
-
-::-webkit-progress-bar {
-  background-color: red;
+.text{
+  display: block;
 }
 
 </style>
