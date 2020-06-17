@@ -63,6 +63,7 @@ export default {
     border-radius: 5px;
     box-shadow: 5px 5px 0px LightSkyBlue;
     margin: 0 5px 5px 0;
+    height: 100%;
   }
 
   .content > div{

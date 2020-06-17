@@ -51,7 +51,7 @@
         <br />
         Utveckling: <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a>
         <br />
-        Finansiering: <a href="https://demokratiskasamtalet.se/" target="_blank">Det demokratiska samtalet</a>
+        I samarbete med: <a href="https://demokratiskasamtalet.se/" target="_blank">Det demokratiska samtalet</a>
         <br /> <br />
         <router-link :to="{ name: 'Info'}">Läs mer om Nyhetsmaskinen</router-link>
 

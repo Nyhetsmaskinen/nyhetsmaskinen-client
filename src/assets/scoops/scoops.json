@@ -2,6 +2,7 @@
   "scoops": [
     {
       "name": "Äta människokött?",
+      "active": true,
       "description": "Det här kan bli stort! En svensk forskare har pratat om kannibalism i direktsändning och det trendar i USA.",
       "social": {
         "twitter": "https://twitter.com/BreitbartNews/status/1170360020195774465?ref_src=twsrc%5Etfw"
@@ -44,6 +45,7 @@
     },
     {
       "name": "Bråk i Muminlandet!",
+      "active": true,
       "description": "En storm har blåst upp i Karlstad. Två politiska läger är i luven på varandra om ett nytt Muminland som ska byggas. Nu sägs det att det gått så långt att politiker fått dödshot. Kan det verkligen stämma? Kolla upp det här och publicera snabbt. Den här nyheten ligger bakom en så kallad betalvägg men ni kan säkert hitta uppgifter på annat håll. Lycka till med granskningen!",
       "social": {
         "url": "https://www.vf.se/2019/11/13/politiker-polisanmaler-dodshot-kopplat-till-muminparken/"
@@ -103,6 +105,7 @@
     },
     {
       "name": "Elever tvingas klimatstrejka?",
+      "active": false,
       "description": "Dagen börjar ta slut men jag fick syn på en sak till som ni borde hinna med innan ni går hem. En lokal nyhetssajt i Umeå har hittat en nyhet som snabbt spridit sig internationellt, om att barn på en förskola tvingas klimatstrejka.",
       "social": {
         "url": "https://www.rt.com/news/469919-children-forced-participate-climate-strike/"
@@ -141,6 +144,50 @@
           "https://www.rt.com/news/469919-children-forced-participate-climate-strike/",
           "https://www.svt.se/nyheter/lokalt/vasterbotten/vastangardsskolan-i-manifestation-hor-barnens-klimatrad-till-de-vuxna",
           "https://sverigesradio.se/sida/artikel.aspx?programid=109&artikel=7316099"
+        ]
+      }
+    },
+    {
+      "name": "Har Trump en lösning på coronaviruset?",
+      "active": true,
+      "description": "Det är väldigt mycket snack om att USAs president Donald Trump hade någon slags förslag på hur vi ska kunna bota covid-19. Kan ni kolla upp om det är värt att göra något på?",
+      "social": {
+        "youtube": "PsQnfpfIa_o?start=1587"
+      },
+      "rating": 0,
+      "timeLimit": 300,
+      "questions": [
+        {
+          "text": "Vad är det egentligen Donald Trump föreslår?",
+          "answers": ["Vi bör testa om det går att behandla insidan av kroppen med ljus eller injicera desinfektionsmedel så att det når lungorna", "Vi bör lagstifta om att människor måste vara ute minst tre timmar om dagen",
+"USA ska börja testa nya former av desinfektionsmedel"],
+          "answerCorrect": 0
+        },
+        {
+          "text": "USAs president Donald Trump har vid många tillfällen kritiserats för att göra falska påståenden. Enligt Washington Post, hur många falska eller vilseledande påståenden gjorde Trump under sina första tre år som president?",
+          "answers": ["45","492","1999","16241"],
+          "answerCorrect": 3
+        },
+        {
+          "text": "Under våren 2020 presenterades en rad olika läkemedel som tänkbara skydd mot coronaviruset. Ett av dessa läkemedel har testats på sjukhus i Sverige men ansågs ge allt för farliga biverkningar för att fortsätta testet. Vilket?",
+          "answers": ["Malariamedicinen klorokin","Stora doser av C-Vitamin","Kolloidalt silver","Hypnos"],
+          "answerCorrect": 0
+        },
+        {
+          "text": "Under Coronaviruspandemin 2020 spreds desinformation av såväl enskilda, organisationer som stater, däribland flera andra presidenter. Vilket av följande förslag har INTE kommit som ett förslag från en politisk ledare som botemedel mot covid-19?",
+          "answers": ["Belarus president Lukasjenko: Köra traktor och bada bastu","Turkmenistans president Berdymukhamedov: Röken från örten harmelbuske","Indiens premiärminister Modi: Dricka urin från kor","Nairobis guvernör Sonko: Dela ut cognacen Hennessy med matpaket"],
+          "answerCorrect": 2
+        }
+      ],
+      "info": {
+        "text": "När Donald Trump kommenterade forskningsrönen under en presskonferens den 23 april 2020 fick han snabbt hård kritik. Det han föreslog ansågs inte rimligt och resultaten kunde vara  skadliga för människor (1, 2). Detta är ett av många exempel på vilseledande uttalanden från presidenten - amerikanska medier har hållit räkningen och kommit fram till över 16 000 felaktiga eller vilseledande påståenden från Donald Trump under hans första tre år som president (3). Under Coronaviruspandemin har desinformation som spritts fått allvarliga konsekvenser i vissa länder. Det finns flera exempel där desinformation spreds av såväl enskilda, organisationer som stater om virusets ursprung och om olika behandlingsmetoder. Rapporter har kommit in om att människor druckit desinfektionsmedel efter Donald Trumps uttalande (4, 5). Dödsfall har skett efter att privatpersoner själva medicinerat med malariamedicin klorokin (6), som Donald Trump själv säger sig ha tagit (7) men där medicinska försök stoppats i Sverige på grund av riskerna (8). I Storbritannien och Nederländerna har mobilmaster för 5G-nätet saboterats på grund av tron att 5G-strålning har med coronaviruset att göra (9). Dagens Nyheter har gjort en sammanställning av några av de vanliga konspirationsteorierna under Coronaviruspandemin. (10). Att någon är högt uppsatt politisk ledare innebär inte automatiskt att det är en trovärdig källa, utan källtillit bör istället grundas i till exempel journalistiska arbetsformer, forskares vetenskapliga metoder eller den politiskt neutrala hållning som är grunden för myndigheters verksamhet.",
+        "references": [
+          "https://www.washingtonpost.com/politics/trump-floats-another-bogus-coronavirus-cure--and-his-administration-scrambles-to-stop-people-from-injecting-disinfectants/2020/04/24/77759238-8644-11ea-a3eb-e9fc93160703_story.html",
+          "https://www.bbc.com/news/world-us-canada-52407177",
+          "https://www.washingtonpost.com/politics/2020/04/14/president-trump-made-18000-false-or-misleading-claims-1170-days/",
+          "https://twitter.com/MDMEMA/status/1253721510570844162",
+          "https://www.nbcnewyork.com/news/local/nyc-poison-control-calls-for-bleach-lysol-double-after-trump-disinfectant-comment/2389593/",
+          "https://www.nbcnews.com/health/health-news/man-dies-after-ingesting-chloroquine-attempt-prevent-coronavirus-n1167166","https://edition.cnn.com/2020/05/18/politics/donald-trump-hydroxychloroquine-coronavirus/index.html","https://www.svt.se/nyheter/lokalt/vast/malariamedicin-provas-pa-sjuka-infektionslakaren-dumt","https://www.expressen.se/nyheter/coronaviruset/corona-och-5g-en-ny-konspirationsteori/","https://www.dn.se/nyheter/varlden/falska-pastaenden-sprids-om-det-nya-coronaviruset/"
         ]
       }
     }

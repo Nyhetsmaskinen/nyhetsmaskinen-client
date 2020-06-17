@@ -11,11 +11,11 @@
       </p>
 
       <p>
-        Verktyget är framtaget av <a href="http://www.fabel.se" target="_blank">Fabel Kommunikation</a> och <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a> på uppdrag av svenska regeringens kommitté <a href="https://demokratiskasamtalet.se/" target="_blank">Nationell satsning på medie- och informationskunnighet och det demokratiska samtalet</a>.
+        Verktyget är framtaget av <a href="http://www.fabel.se" target="_blank">Fabel Kommunikation</a> och <a href="https://www.interaktivarum.se" target="_blank">Interaktiva rum</a> i samarbete med svenska regeringens kommitté <a href="https://demokratiskasamtalet.se/" target="_blank">Nationell satsning på medie- och informationskunnighet och det demokratiska samtalet</a>.
       </p>
 
       <p>
-        Allt innehåll är licensierat enligt Creative Commons (<a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank">CC-BY-4.0</a>) och kan användas fritt, även i kommersiellt syfte, under förutsättning att de ursprungliga skaparna av materialet namnges. Vi använder oss av öppen källkod som kan återfinnas på <a href="https://github.com/Nyhetsmaskinen" target="_blank">https://github.com/Nyhetsmaskinen</a>.
+        Allt innehåll är licensierat enligt Creative Commons (<a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank">CC-BY-4.0</a>) och kan användas fritt, även i kommersiellt syfte, under förutsättning att de ursprungliga skaparna av materialet namnges.
       </p>
 
       <p>

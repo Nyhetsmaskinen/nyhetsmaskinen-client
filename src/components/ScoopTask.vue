@@ -31,6 +31,9 @@
                 <a :href="scoop.social.instagram">Inlägg på Instagram</a>
               </blockquote>
             </div>
+            <div v-if="scoop.social.youtube" class="post" ref="youtube-container">
+              <iframe width="560" height="315" :src="'https://www.youtube.com/embed/' + scoop.social.youtube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </Instruction>
         </div>
 
@@ -136,7 +139,12 @@ export default {
           }
         });
       }
-
+    },
+    setYoutubeDimensions: function () {
+      let el = this.$refs["youtube-container"]
+      if(el){
+        el.offsetHidth = el.offsetWidth / 16 * 9;
+      }
     }
   },
   mounted: function () {
@@ -144,6 +152,7 @@ export default {
     this.$store.dispatch('addScript', {src: '//www.instagram.com/embed.js', id: "instagram-js"})
 
     this.setOG();
+    //this.setYoutubeDimensions();
 
   }
 }
@@ -168,7 +177,6 @@ export default {
   flex: 0 1 600px;
   overflow-x: scroll;
   margin-right: 10px;
-
 }
 
 .postContainer{
@@ -182,6 +190,7 @@ export default {
 }
 
 .social > div{
+  width: 100%;
 }
 
 .blockquote, .blockquote *{

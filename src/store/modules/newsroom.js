@@ -56,7 +56,7 @@ export default {
     },
     initScoops({commit,dispatch}) {
       commit('resetScoops')
-      scoops.scoops.forEach((s) => {
+      scoops.scoops.filter(s => s.active).forEach((s) => {
         dispatch('initScoop',{scoop:s})
       });
     },
